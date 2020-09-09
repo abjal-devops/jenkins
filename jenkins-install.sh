@@ -6,6 +6,7 @@ useradd -d /var/lib/jenkins -s /bin/bash jenkins
 echo 'export PATH=$PATH:/opt/apache-maven-3.6.3/bin' >> /etc/profile
 echo 'export M2_HOME=/opt/apache-maven-3.6.3/' >> /etc/profile
 source /etc/profile
+exec bash
 curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
 rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 yum install jenkins -y
