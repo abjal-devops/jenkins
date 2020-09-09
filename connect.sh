@@ -6,4 +6,5 @@ ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a 
 ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo sh jenkins-install.sh
 sleep 60
 ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo cat /var/lib/jenkins/initialAdminPassword
+echo $a
  
