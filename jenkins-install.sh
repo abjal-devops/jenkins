@@ -12,3 +12,6 @@ yum install jenkins -y
 systemctl start jenkins
 systemctl enable jenkins
 sudo chown -R jenkins.jenkins /opt/apache-maven-3.6.2/
+yum install docker -y
+systemctl start docker 
+usermod -aG docker jenkins # restart of jenkins required.
