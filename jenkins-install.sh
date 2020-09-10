@@ -2,7 +2,6 @@ yum install java-1.8.0-openjdk-devel -y
 yum install git -y
 cd /opt && sudo wget https://archive.apache.org/dist/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
 tar -xzvf apache-maven-3.6.2-bin.tar.gz
-sudo chown -R jenkins.jenkins /opt/apache-maven-3.6.2/
 echo 'export PATH=$PATH:/opt/apache-maven-3.6.2/bin' >> /etc/profile
 echo 'export M2_HOME=/opt/apache-maven-3.6.2/' >> /etc/profile
 source /etc/profile
@@ -12,3 +11,4 @@ rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 yum install jenkins -y
 systemctl start jenkins
 systemctl enable jenkins
+sudo chown -R jenkins.jenkins /opt/apache-maven-3.6.2/
