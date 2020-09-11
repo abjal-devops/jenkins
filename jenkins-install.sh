@@ -8,8 +8,10 @@ source /root/.bashrc
 curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
 rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 yum install jenkins -y
-git clone https://github.com/abjal-devops/jenkins.git
-cp ~/jenkins-setup-files/plugins/* /var/lib/jenkins/plugins && cp ~/jenkins-setup-files/plugins1/* /var/lib/jenkins/plugins && cp ~/jenkins-setup-files/config.xml /var/lib/jenkins/
+git clone https://github.com/abjal-devops/jenkins-setup-files.git
+mkdir -p /var/lib/jenkins/plugins
+chown -R jenkins.jenkins /var/lib/jenkins/
+cp ./jenkins-setup-files/plugins/* /var/lib/jenkins/plugins && cp ./jenkins-setup-files/plugins1/* /var/lib/jenkins/plugins && cp ./jenkins-setup-files/config.xml /var/lib/jenkins/
 systemctl start jenkins
 systemctl enable jenkins
 sudo chown -R jenkins.jenkins /opt/apache-maven-3.6.2/
