@@ -4,3 +4,4 @@ scp -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem jenkins-inst
 ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo yum install  -y dos2unix
 ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a dos2unix jenkins-install.sh
 ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo sh jenkins-install.sh
+echo $a 
