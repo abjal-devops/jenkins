@@ -7,7 +7,7 @@ ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a 
 echo $a 
 b=`aws ec2 describe-instances     --filters "Name=tag:Name,Values=dev"    --query Reservations[*].Instances[*].PublicIpAddress     --output text`
 echo $b
-ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo yum install  -y docker
-ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo systemctl start docker
-ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$a sudo docker swarm init
+ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$b sudo yum install  -y docker
+ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$b sudo systemctl start docker
+ssh -o StrictHostKeyChecking=no -i /c/Users/abjal/Downloads/abs.pem ec2-user@$b sudo docker swarm init
 echo $b
